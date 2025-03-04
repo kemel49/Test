@@ -1,4 +1,4 @@
-<!--==============
+==============
 বাইবেল তথ্যভান্ডার
 ==============
 এই তথ্যভান্ডার ফাইলটি ডেভেলপারদেরকে সহজে বাইবেল সম্বন্ধীয় অ্যাপ্লিকেশন তৈরী করতে সাহায্য করার জন্য প্রকাশিত হয়েছে, ডেভেলপারদেরকে এই তথ্যভাণ্ডারের যেকোনো সংশোধনের অনুরোধ জানানোর জন্যও উৎসাহিত করা হচ্ছে।
@@ -29,29 +29,22 @@
 
 **SQL তথ্যভান্ডার**
 
-SQL তথ্যভাণ্ডারে <> 
-SQL Database is having fields ``Book``, ``Chapter``, ``Versecount``
-which are of type INT and ``verse`` field which is VARCHAR.
-The Book field starts from 0 and Chapter & Versecount from 1.
-Below is a sample SQL query for fetching *John 3:16*
+SQL তথ্যভাণ্ডারে ``Book``, ``Chapter``, ``Versecounr`` নামের ক্ষেত্র আছে
+যেগুলো একধরনের INT এবং ``Verse`` ক্ষেত্র যেটি একটি VARCHAR।
+``Book`` ক্ষেত্রটি 0 থেকে শুরু হয়েছে এবং ``Chapter`` ও ``Versecount`` 1 থেকে শুরু হয়েছে।
+নিচে একটি সাধারণ SQL query দেওয়া হলো যার দ্বারা *John 3:16* খোঁজা হবে
 
 ``Select Book,Chapter,Versecount,verse from bible where Book=42 and Chapter=3 and Versecount=16;``
 
 
 **XML তথ্যভান্ডার**
 
-XML Database is having fields ``Book``, ``Chapter``, ``Verse``
-which are to having keys called 'id'.
-The Book id starts from 0 and Chapter & Verse from 1.
+XML তথ্যভাণ্ডারেও ``Book``, ``Chapter``, ``Verse`` ক্ষেত্রগুলো আছে যেগুলোকে 'id' দ্বারা স্থাপন করা হয়েছে।
+``Book`` এক id 0 থেকে এবং ``Chapter`` ও ``Verse`` এর 1 থেকে শুরু হয়েছে।
 
 
 **JSON তথ্যভান্ডার**
-
-JSON Database have fields ``Verse`` & ``Verseid``. Verseid field is a unique id
-which is a comibination of Book + Chapter + Verse. First two digits represents Book(0 - 65),
-Second three digits represent Chapter and last three digits represent Verse.
-For JSON Database, Book, Chapter and Verse starts from 0.
-Below is a sample PHP code for fetching *John 3:16*;
+JSON তথ্যভাণ্ডারে ``Verse`` ও ``Verseid`` নামের ক্ষেত্রে আছে। Verseid ফিল্ড একটি একক মান যা Book + Chapter + Verse এর সংমিশ্রণ। প্রথম দুটি সংখ্যা ``book`` এর প্রতিনিধিত্ব করে (0 - 65), দ্বিতীয় তিনটি সংখ্যা ``chapter`` এর প্রতিনিধিত্ব করে এবং শেষ তিনটি সংখ্যা ``Verse`` কে উপস্থাপন করে। JSON তথ্যভাণ্ডারের জন্য Book, Chapter ও Verse 0 থেকে শুরু হয়। নিচে *John 3:16* কে উপস্থাপন করার জন্য একটি PHP কোড দেওয়া হলো;
 
 >>> <?php
 >>> $filecontent = file_get_contents("bible.json");
@@ -59,7 +52,7 @@ Below is a sample PHP code for fetching *John 3:16*;
 >>> echo $books->Book[42]->Chapter[2]->Verse[15]->Verse;
 >>> ?>
 
-*Javascript Example*
+*Javascript উদাহরণ*
 
 >>> var bible;
 >>> function readJsonFile() {
@@ -79,7 +72,7 @@ Below is a sample PHP code for fetching *John 3:16*;
 >>>    return bible.Book[book - 1].Chapter[chapter - 1].Verse[verse - 1].Verse;
 >>> }
 
-ব্যবহারকারী এই রিপোটি ক্লোন করতে পারেন:
+ব্যবহারকারী এই রেপোটি ক্লোন করতে পারেন:
 
    git clone https://github.com/godlytalias/Bible-Database.git
 
@@ -89,7 +82,7 @@ Below is a sample PHP code for fetching *John 3:16*;
 	#. ডেভেলপাররা/সহযোগিতাকারীরা তাদের সমস্যা `উত্থাপন <https://github.com/godlytalias/Bible-Database/issues>` করতে পারেন অথবা `ইমেইল <mailto:godlytalias@yahoo.co.in>` করতে পারেন।
 	#.পুল রিকোয়েস্টকে স্বাগত, যদি কোনো বাগ পাওয়া যায় তবে অনুগ্রহ করে ঠিক করে প্যাচগুলিকে পুশ করুন।
 
-Credits
+স্বীকৃতি
 -------
 `Wordproject® <http://wordproject.org>`_ থেকে তথ্য সংগ্রহ করে এই তথ্যভাণ্ডারটি তৈরী করা হয়েছে।
 
@@ -103,4 +96,4 @@ GNU GPL Version 3, 29 June 2007.
 
 `Godly T.Alias <http://godlytalias.blogspot.com>`_ দ্বারা সর্বস্বত্ত সংরক্ষিত।
 
-Copyright © 2015-->
+Copyright © 2015
